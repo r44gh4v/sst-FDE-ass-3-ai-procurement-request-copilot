@@ -1,0 +1,21 @@
+case_id,request_id,architecture,minimum_checks_passed,correct_next_action,recommendation,guardrail_overrides,ungrounded_numbers,latency_ms,llm_calls,tool_calls,failures
+PUB-01,REQ-1001,single,True,True,Proceed to standard approval,0,0,15494,5,5,
+PUB-02,REQ-1002,single,True,True,Route for specialist review,0,0,18462,5,5,
+PUB-03,REQ-1003,single,True,True,Route for specialist review,0,0,12248,5,5,
+PUB-04,REQ-1005,single,True,True,Route for specialist review,0,0,18451,5,5,
+PUB-05,REQ-1006,single,True,True,Request clarification,0,0,7593,5,5,
+PUB-06,REQ-1009,single,True,True,Escalate to manual review,0,0,12301,5,5,
+EXT-01,REQ-1004,single,True,True,Route for specialist review,0,0,12458,5,5,
+EXT-02,REQ-1007,single,True,True,Escalate to manual review,0,0,19011,5,5,
+EXT-03,REQ-1008,single,False,False,Proceed to standard approval,0,0,31646,6,6,risk flag missing (expected one of: ['existing_tool_overlap'])
+EXT-04,REQ-1010,single,True,True,Proceed to standard approval,0,0,10268,5,5,
+PUB-01,REQ-1001,staged,True,True,Proceed to standard approval,0,0,15889,5,4,
+PUB-02,REQ-1002,staged,True,True,Route for specialist review,0,0,24923,5,4,
+PUB-03,REQ-1003,staged,True,True,Route for specialist review,0,0,20823,5,4,
+PUB-04,REQ-1005,staged,True,True,Route for specialist review,0,1,18470,6,5,
+PUB-05,REQ-1006,staged,True,True,Request clarification,0,0,44912,5,4,
+PUB-06,REQ-1009,staged,True,True,Escalate to manual review,0,0,20795,5,4,
+EXT-01,REQ-1004,staged,True,True,Route for specialist review,0,0,21538,5,4,
+EXT-02,REQ-1007,staged,True,True,Escalate to manual review,0,0,24977,5,4,
+EXT-03,REQ-1008,staged,False,False,Proceed to standard approval,0,0,20320,6,5,risk flag missing (expected one of: ['existing_tool_overlap'])
+EXT-04,REQ-1010,staged,True,True,Proceed to standard approval,0,0,14081,5,4,

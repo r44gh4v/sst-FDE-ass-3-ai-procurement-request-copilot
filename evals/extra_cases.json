@@ -1,0 +1,52 @@
+[
+  {
+    "case_id": "EXT-01",
+    "request_id": "REQ-1004",
+    "title": "Approved AI vendor used for customer PII",
+    "what_it_tests": "Limited-use approval does not cover customer PII; cross-region data",
+    "expectations": {
+      "required_approvals_any_groups": [["security"], ["privacy"], ["legal"]],
+      "risk_flags_any_groups": [["security_review_required"], ["privacy_review_required"]],
+      "min_evidence_items": 3,
+      "human_review_required": true
+    }
+  },
+  {
+    "case_id": "EXT-02",
+    "request_id": "REQ-1007",
+    "title": "Registry and risk API disagree",
+    "what_it_tests": "Conflicting / expired vendor evidence is surfaced, not silently resolved",
+    "expectations": {
+      "required_approvals_any_groups": [["security"], ["finance"]],
+      "risk_flags_any_groups": [["conflicting_vendor_evidence"], ["vendor_review_expired"]],
+      "min_evidence_items": 3,
+      "human_review_required": true
+    }
+  },
+  {
+    "case_id": "EXT-03",
+    "request_id": "REQ-1008",
+    "title": "Existing company-wide tool already solves the need",
+    "what_it_tests": "Overlap judgement on a same-vendor product with no stated gap",
+    "expectations": {
+      "required_approvals_any_groups": [["department head"], ["procurement"]],
+      "risk_flags_any_groups": [["existing_tool_overlap"]],
+      "risk_flags_must_not_contain": ["budget_insufficient", "security_review_required"],
+      "min_evidence_items": 3,
+      "human_review_required": true
+    }
+  },
+  {
+    "case_id": "EXT-04",
+    "request_id": "REQ-1010",
+    "title": "Low-value services, no data access",
+    "what_it_tests": "Threshold just under $1,000 stays at Manager approval",
+    "expectations": {
+      "required_approvals_any_groups": [["manager"]],
+      "risk_flags_must_not_contain": ["security_review_required", "budget_insufficient"],
+      "max_missing_information": 0,
+      "min_evidence_items": 2,
+      "human_review_required": true
+    }
+  }
+]
